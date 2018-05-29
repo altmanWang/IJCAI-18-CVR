@@ -1,3 +1,5 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 [阿里妈妈广告转化预测官网](https://tianchi.aliyun.com/competition/introduction.htm?spm=5176.100066.0.0.6acdd78099jwux&raceId=231647)
 
 # IJCAI-18 阿里妈妈搜索广告转化预测总结（0.13966，53/5204）
