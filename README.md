@@ -1,6 +1,5 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-[阿里妈妈广告转化预测官网](https://tianchi.aliyun.com/competition/introduction.htm?spm=5176.100066.0.0.6acdd78099jwux&raceId=231647)
+[阿里妈妈广告转化预测官网](https://tianchi.aliyun.com/competition/introducti
+on.htm?spm=5176.100066.0.0.6acdd78099jwux&raceId=231647)
 
 # IJCAI-18 阿里妈妈搜索广告转化预测总结（0.13966，53/5204）
 
@@ -104,11 +103,11 @@ user_id | item_id | history_click | path
 ## 类别平衡
 通过设置每个样本的权重从而达到类别平衡。训练集的转化率为0.046，测试集的转化率预估0.037，所以我们需要加大对负样本的权重，使得预测转化率降低。
 
-`$expected\_cvr=\dfrac{positive\_example}{positive\_weight * positive\_example + negative\_weight * negative\_example}$`
+![image](https://img-blog.csdn.net/20180529104252671)
 
-上式中`$expected\_cvr$`代表期望达到的转化率，`$positive\_example$`和`$negative\_example$`分别是训练集中正样本和负样本的个数，`$positive\_weight$`和`$negative\_weight$`分别是训练集中正样本和负样本的权重。我们可以设置`$positive\_weight$`固定为1，调整`$negative\_weight$`即可。
+上式中expected_cvr代表期望达到的转化率，pos_example和neg_example分别是训练集中正样本和负样本的个数，pos_weight和neg_weight分别是训练集中正样本和负样本的权重。我们可以设置pos_weight固定为1，调整neg_weight即可。
 
-在这里需要注意到，在sklearn、lgb或者xgb中有两个参数都已达到该效果，即class_weight和sample_weight。`$class\_weight$`是对各个类别统一设置权重、`$sample\_weight$`为各个样本设置权重，最终每个样本的权重为`$class\_weight * sample\_weight$`。我们这里只设置了`$sample\_weight$`。
+在这里需要注意到，在sklearn、lgb或者xgb中有两个参数都已达到该效果，即class_weight和sample_weight。class_weight是对各个类别统一设置权重、sample_weight为各个样本设置权重，最终每个样本的权重为class_weight * sample_weight。我们这里只设置了sample_weight。
 
 ## 模型选择与融合
 
@@ -119,5 +118,5 @@ user_id | item_id | history_click | path
 分别通过xgb和lgb模型并采用bagging策略得到两份结果，最终取平均作为最终输出结果。
 
 参考资料：
-- [1](https://github.com/plantsgo/ijcai-2018/)
-- [2](https://zhuanlan.zhihu.com/p/36858386?utm_source=com.alibaba.android.rimet&utm_medium=social&utm_oi=555381879923224576)
+- [阿里妈妈比赛第一名EDA](https://github.com/plantsgo/ijcai-2018/)
+- [Kaggle CTR 比赛第一名PPT](https://www.csie.ntu.edu.tw/~r01922136/slides/kaggle-avazu.pdf)
