@@ -121,4 +121,5 @@ user_id | item_id | history_click | path
 
 参考资料：
 - [阿里妈妈比赛第一名EDA](https://github.com/plantsgo/ijcai-2018/)
+- [阿里妈妈比赛第三名PPT](https://github.com/luoda888/2018-IJCAI-top3)
 - [Kaggle CTR 比赛第一名PPT](https://www.csie.ntu.edu.tw/~r01922136/slides/kaggle-avazu.pdf)
