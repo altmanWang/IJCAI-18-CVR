@@ -33,11 +33,11 @@
 
 ###### 流量图：
 
-![image](https://img-blog.csdn.net/20180528172734456)
+![image](https://raw.githubusercontent.com/altmanWang/IJCAI-18-CVR/master/images/TIM%E5%9B%BE%E7%89%8720180528172529.png)
 
 ###### 转化率图：
 
-![image](https://img-blog.csdn.net/20180528172740928)
+![image](https://github.com/altmanWang/IJCAI-18-CVR/blob/master/images/TIM%E5%9B%BE%E7%89%8720180528172549.png?raw=true)
 
 
 
@@ -49,7 +49,7 @@
 
 ###### 用户点击次数：
 
-![image](https://img-blog.csdn.net/20180528172721746)
+![image](https://github.com/altmanWang/IJCAI-18-CVR/blob/master/images/TIM%E5%9B%BE%E7%89%8720180528172602.png?raw=true)
 
 通过该图可以发现大多数用户的点击量为1,所以存在用户冷启动问题，即该用户没有历史记录，不能从历史数据中获得该用户的购物意向。针对每个冷启动用户，我们只能从点击商品的属性和上下文信息中获得购物意向。
 
@@ -66,7 +66,7 @@ user_id | item_id | history_click
 
 第一的解决方案：
 
-[Top1 解决方案](https://github.com/plantsgo/ijcai-2018/blob/master/)
+[Top1 解决方案](https://github.com/altmanWang/IJCAI-18-CVR/blob/master/images/TIM%E5%9B%BE%E7%89%8720180528172602.png?raw=true)
 
 具体思路：对于单次用户，我们只能通过他搜索的和商品实际的属性，以及品类的确定。 对于多次用户，我们能统计出用户的属性偏好，以及用户的实际想购买的偏好。 
 
@@ -108,7 +108,7 @@ user_id | item_id | history_click | path
 ## 类别平衡
 通过设置每个样本的权重从而达到类别平衡。训练集的转化率为0.046，测试集的转化率预估0.037，所以我们需要加大对负样本的权重，使得预测转化率降低。
 
-![image](https://img-blog.csdn.net/20180529104252671)
+![image](https://github.com/altmanWang/IJCAI-18-CVR/blob/master/images/TIM%E5%9B%BE%E7%89%8720180529104152.png?raw=true)
 
 上式中expected_cvr代表期望达到的转化率，pos_example和neg_example分别是训练集中正样本和负样本的个数，pos_weight和neg_weight分别是训练集中正样本和负样本的权重。我们可以设置pos_weight固定为1，调整neg_weight即可。
 
